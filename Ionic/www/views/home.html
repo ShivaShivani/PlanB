@@ -1,17 +1,27 @@
 <ion-view>
-  <ion-nav-view>Home</ion-nav-view>
-  <ion-content>
-    <div class="card">
-      <div class="item item-divider">
-        I'm a Header in a Card!
-      </div>
-      <div class="item item-text-wrap">
-        This is a basic Card with some text.
-      </div>
-      <div class="item item-divider">
-        I'm a Footer in a Card!
-      </div>
-    </div>
+    <ion-nav-view>Home</ion-nav-view>
+    <ion-content>
+        <ion-list>
+            <ion-list-inset>
+            <ion-item ng-repeat="event in events">
+                <span>{{event.title}}</span>
+                <span>{{event.location}}</span>
+                <span>{{event.datetime}}</span>
+            </ion-item>
+            </ion-list-inset>
+        </ion-list>
 
-  </ion-content>
+        <!--<a class="item item-thumbnail-left" href="#" >-->
+        <!--<h2>{{eventTitle}}</h2>-->
+        <!--<p>{{eventLocation}}</p>-->
+        <!--<p> {{eventDatetime}} </p>-->
+        <!--</a>-->
+        </div>
+
+    </ion-content>
+    <ion-footer-bar>
+        <div class="bar bar-footer">
+            <button class="button button-icon icon ion-plus-circled pull-right" ng-click="plan()">PLAN</button>
+        </div>
+    </ion-footer-bar>
 </ion-view>

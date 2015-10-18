@@ -1,0 +1,57 @@
+<div class="modal">
+    <ion-header-bar class="bar-secondary">
+        <h1 class="title">New Plan</h1>
+        <button class="button button-clear button-positive" ng-click="closeEvent()">Cancel</button>
+    </ion-header-bar>
+    <ion-content padding="true" scroll="false" class="has-header">
+        <form class="list" ng-submit="create(event)">
+            <ion-list>
+                <label class="item item-input">
+                    <span class="input-label">Title</span>
+                    <input type="text" ng-model="event.title" placeholder="Enter Event title">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Location</span>
+                    <input type="text" ng-model="event.location" placeholder="Enter Event Location">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Event Time</span>
+                    <input type="datetime-local" ng-model="event.datetime" placeholder="">
+                </label>
+            </ion-list>
+            <button type="submit" class="button button-stable button-block">Create</button>
+        </form>
+    </ion-content>
+</div>
+
+
+<!--<div class="bar bar-header item-input-inset">-->
+<!--<label class="item-input-wrapper">-->
+<!--<i class="icon ion-ios-search placeholder-icon"></i>-->
+<!--<input id="search-entry" ng-model="searchEntry" type="search" placeholder="Search">-->
+<!--</label>-->
+<!--<button id="search-btn" class="button button-clear button-energized" type="button" ng-click="search(searchEntry)">Search</button>-->
+
+<!--</div>-->
+<!--<div class="list">-->
+<!--<a class="item item-thumbnail-left" href="#" ng-repeat="item in items">-->
+<!--<img src={{"item."}}>-->
+<!--<h2>{{item.name}}</h2>-->
+<!--<p>{{item.url}}</p>-->
+<!--<p>{{item.formattedPhone}}</p>-->
+<!--<p>{{item.id}}</p>-->
+<!--</a>-->
+<!--</div>-->
+<!--<div>-->
+
+<!--</div>-->
+<!--</ion-content>-->
+
+<!--<ion-tabs class="tabs-positive tabs-icon-only">-->
+<!--<ion-tab title="Search" icon-on="ion-ios-search" icon-off="ion-ios-search">-->
+<!--</ion-tab>-->
+<!--<ion-tab title="Compose" icon-on="ion-ios-compose" icon-off="ion-ios-compose">-->
+<!--</ion-tab>-->
+<!--</ion-tabs>-->
+
+</ion-view>
