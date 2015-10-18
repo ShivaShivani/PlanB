@@ -1,0 +1,21 @@
+<ion-view>
+  <ion-nav-title>PlanB</ion-nav-title>
+  <ion-content>
+    <div class="list">
+      <label class="item item-input item-floating-label">
+        <span class="input-label">User Name</span>
+        <input type="text" ng-model="username" placeholder="User Name">
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Password</span>
+        <input type="password" ng-model="password" placeholder="Password">
+      </label>
+    </div>
+    <div class="padding">
+      <p>{{msg}}</p>
+      <button class="button button-block button-positive activated" ng-click="login(username, password)">Login</button>
+      <p>If you don't have an account,Please register below</p>
+      <button class="button button-block button-positive activated" ng-click="register()">Register</button>
+    </div>
+  </ion-content>
+</ion-view>
