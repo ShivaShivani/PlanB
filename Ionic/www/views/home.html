@@ -1,27 +1,27 @@
-<ion-view>
-    <ion-nav-view>Home</ion-nav-view>
-    <ion-content>
-        <ion-list>
-            <ion-list-inset>
-            <ion-item ng-repeat="event in events">
-                <span>{{event.title}}</span>
-                <span>{{event.location}}</span>
-                <span>{{event.datetime}}</span>
-            </ion-item>
-            </ion-list-inset>
-        </ion-list>
 
-        <!--<a class="item item-thumbnail-left" href="#" >-->
-        <!--<h2>{{eventTitle}}</h2>-->
-        <!--<p>{{eventLocation}}</p>-->
-        <!--<p> {{eventDatetime}} </p>-->
-        <!--</a>-->
-        </div>
+<ion-content>
+    <ion-list>
+        <ion-item ng-repeat="event in events" class="item-thumbnail-left">
+            <h2>{{event.title}}</h2>
 
-    </ion-content>
-    <ion-footer-bar>
-        <div class="bar bar-footer">
-            <button class="button button-icon icon ion-plus-circled pull-right" ng-click="plan()">PLAN</button>
-        </div>
-    </ion-footer-bar>
-</ion-view>
+            <p>{{event.location}}</p>
+
+            <p>{{event.datetime}}</p>
+            <ion-delete-button class="ion-minus-circled" ng-click="onItemDelete(item)">
+            </ion-delete-button>
+        </ion-item>
+    </ion-list>
+
+    <!--<a class="item item-thumbnail-left" href="#" >-->
+    <!--<h2>{{eventTitle}}</h2>-->
+    <!--<p>{{eventLocation}}</p>-->
+    <!--<p> {{eventDatetime}} </p>-->
+    <!--</a>-->
+
+
+</ion-content>
+<ion-footer-bar>
+    <div class="bar bar-footer">
+        <button class="button button-icon icon ion-plus-circled pull-right" ng-click="plan()">PLAN</button>
+    </div>
+</ion-footer-bar>
