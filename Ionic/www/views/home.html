@@ -1,7 +1,18 @@
+<ion-header-bar class="bar-energized">
+    <div class="buttons">
+        <button class="button button-icon icon ion-ios-minus-outline"
+                ng-click="data.showDelete = !data.showDelete;"></button>
+    </div>
+    <h1 class="title">Lets Plan!</h1>
 
+    <div class="buttons">
+        <button class="button button-icon icon ion-navicon-round" ng-click="data.showDelete = false">
+        </button>
+    </div>
+</ion-header-bar>
 <ion-content>
-    <ion-list>
-        <ion-item ng-repeat="event in events" class="item-thumbnail-left">
+    <ion-list show-delete="data.showDelete">
+        <ion-item ng-repeat="event in events" class="item-remove-animate" ng-click="details()">
             <h2>{{event.title}}</h2>
 
             <p>{{event.location}}</p>
@@ -9,16 +20,9 @@
             <p>{{event.datetime}}</p>
             <ion-delete-button class="ion-minus-circled" ng-click="onItemDelete(item)">
             </ion-delete-button>
+
         </ion-item>
     </ion-list>
-
-    <!--<a class="item item-thumbnail-left" href="#" >-->
-    <!--<h2>{{eventTitle}}</h2>-->
-    <!--<p>{{eventLocation}}</p>-->
-    <!--<p> {{eventDatetime}} </p>-->
-    <!--</a>-->
-
-
 </ion-content>
 <ion-footer-bar>
     <div class="bar bar-footer">

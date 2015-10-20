@@ -5,9 +5,9 @@
 angular.module('PlanB.controller', ['ionic', 'ui.router'])
     .controller('LoginCtrl', function ($scope, $state, $http, $httpParamSerializerJQLike) {
         $scope.pageClass = 'login';
-        $scope.register = function () {
-            $state.go('register')
-        }
+        //$scope.register = function () {
+        //    $state.go('register')
+        //}
         $scope.login = function (username, password) {
             $state.go('home')
         }
@@ -74,6 +74,15 @@ angular.module('PlanB.controller', ['ionic', 'ui.router'])
         $scope.closeEvent = function () {
             $scope.eventModal.hide();
         }
+        $scope.data = {
+            showDelete: false
+        };
+
+        $scope.onItemDelete = function (item) {
+            $scope.items.splice($scope.items.indexOf(item), 1);
+        };
+
+
     })
 ;
 

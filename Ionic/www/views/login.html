@@ -1,21 +1,22 @@
-<ion-view>
-  <ion-nav-title>PlanB</ion-nav-title>
-  <ion-content>
+<ion-header-bar class="bar-energized"></ion-header-bar>
+<ion-content>
     <div class="list">
-      <label class="item item-input item-floating-label">
-        <span class="input-label">User Name</span>
-        <input type="text" ng-model="username" placeholder="User Name">
-      </label>
-      <label class="item item-input item-floating-label">
-        <span class="input-label">Password</span>
-        <input type="password" ng-model="password" placeholder="Password">
-      </label>
+        <label class="item item-input item-floating-label">
+            <span class="input-label">User Name</span>
+            <input type="text" ng-model="username" placeholder="User Name">
+        </label>
+        <label class="item item-input item-floating-label">
+            <span class="input-label">Password</span>
+            <input type="password" ng-model="password" placeholder="Password">
+        </label>
     </div>
     <div class="padding">
-      <p>{{msg}}</p>
-      <button class="button button-block button-positive activated" ng-click="login(username, password)">Login</button>
-      <p>If you don't have an account,Please register below</p>
-      <button class="button button-block button-positive activated" ng-click="register()">Register</button>
+        <button class="button button-block button-positive" ng-click="login(username, password)">Login</button>
+        <a href="#/register">I don't have an Account.</a>
     </div>
-  </ion-content>
-</ion-view>
+    <div class="padding">
+        <button class="button button-clear button-positive">Click to Login with Facebook</button></br>
+        <button class="button button-clear button-assertive">Click to Login with Google</button>
+    </div>
+</ion-content>
+
