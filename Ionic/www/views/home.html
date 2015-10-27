@@ -14,14 +14,10 @@
     <ion-list class="container posts-page" show-delete="data.showDelete">
         <ion-item ng-repeat="event in events" class="item-remove-animate; post row" href="#/details/{{event.id}}">
             <h2>{{event.title}}</h2>
-
             <p>{{event.location}}</p>
-
             <p>{{event.datetime}}</p>
-            <i class="icon ion-chevron-right icon-accessory"></i>
             <ion-delete-button class="ion-minus-circled" ng-click="onItemDelete(item)">
             </ion-delete-button>
-
         </ion-item>
     </ion-list>
 </ion-content>
