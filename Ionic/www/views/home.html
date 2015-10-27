@@ -3,7 +3,7 @@
         <button class="button button-icon icon ion-ios-minus-outline"
                 ng-click="data.showDelete = !data.showDelete;"></button>
     </div>
-    <h1 class="title">Lets Plan!</h1>
+    <h1 class="title">Lets Plan, Shivani!</h1>
 
     <div class="buttons">
         <button class="button button-icon icon ion-navicon-round" ng-click="data.showDelete = false">
@@ -11,13 +11,14 @@
     </div>
 </ion-header-bar>
 <ion-content>
-    <ion-list show-delete="data.showDelete">
-        <ion-item ng-repeat="event in events" class="item-remove-animate" ng-click="details()">
+    <ion-list class="container posts-page" show-delete="data.showDelete">
+        <ion-item ng-repeat="event in events" class="item-remove-animate; post row" href="#/details/{{event.id}}">
             <h2>{{event.title}}</h2>
 
             <p>{{event.location}}</p>
 
             <p>{{event.datetime}}</p>
+            <i class="icon ion-chevron-right icon-accessory"></i>
             <ion-delete-button class="ion-minus-circled" ng-click="onItemDelete(item)">
             </ion-delete-button>
 

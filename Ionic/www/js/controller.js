@@ -43,8 +43,8 @@ angular.module('PlanB.controller', ['ionic', 'ui.router'])
         }
 
     })
-    .controller('HomeCtrl', function ($scope, $state, $ionicModal) {
-        $scope.events = [];
+    .controller('HomeCtrl', function ($scope, $state, $ionicModal, Events) {
+        $scope.events = Events.all();
 
         //open our plan modal
         $scope.plan = function () {
@@ -59,21 +59,30 @@ angular.module('PlanB.controller', ['ionic', 'ui.router'])
         });
         //called when event is submitted
         $scope.create = function (event) {
-            $scope.events.push({
+            //$scope.events.push({
+            //    title: event.title,
+            //    location: event.location,
+            //    datetime: event.datetime
+            //});
+
+            Events.create({
                 title: event.title,
                 location: event.location,
                 datetime: event.datetime
             });
+
+            console.log(Events.all());
             $scope.closeEvent();
 
             event.title = "";
             event.location = "";
             event.datetime = "";
+
         };
         // Close the event modal
         $scope.closeEvent = function () {
             $scope.eventModal.hide();
-        }
+        };
         $scope.data = {
             showDelete: false
         };
@@ -81,7 +90,12 @@ angular.module('PlanB.controller', ['ionic', 'ui.router'])
         $scope.onItemDelete = function (item) {
             $scope.items.splice($scope.items.indexOf(item), 1);
         };
+    })
+    .controller('DetailCtrl', function($scope, $state, $stateParams, Events) {
+        console.log($stateParams.eventId);
+        $scope.event = Events.get($stateParams.eventId);
 
+        console.log($scope.event);
 
     })
 ;
