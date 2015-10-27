@@ -59,13 +59,8 @@ angular.module('PlanB.controller', ['ionic', 'ui.router'])
         });
         //called when event is submitted
         $scope.create = function (event) {
-            //$scope.events.push({
-            //    title: event.title,
-            //    location: event.location,
-            //    datetime: event.datetime
-            //});
-
             Events.create({
+                id: new Date().getTime(),
                 title: event.title,
                 location: event.location,
                 datetime: event.datetime
@@ -77,7 +72,6 @@ angular.module('PlanB.controller', ['ionic', 'ui.router'])
             event.title = "";
             event.location = "";
             event.datetime = "";
-
         };
         // Close the event modal
         $scope.closeEvent = function () {
@@ -91,7 +85,7 @@ angular.module('PlanB.controller', ['ionic', 'ui.router'])
             $scope.items.splice($scope.items.indexOf(item), 1);
         };
     })
-    .controller('DetailCtrl', function($scope, $state, $stateParams, Events) {
+    .controller('DetailCtrl', function ($scope, $state, $stateParams, Events) {
         console.log($stateParams.eventId);
         $scope.event = Events.get($stateParams.eventId);
 

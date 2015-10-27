@@ -14,7 +14,7 @@ angular.module('PlanB.services', [])
             },
             get: function (eventId) {
                 for (var i = 0; i < events.length; i++) {
-                    if (events[i].id === parseint(eventId)) {
+                    if (events[i].id == eventId) {
                         return events[i];
                     }
                 }
