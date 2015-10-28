@@ -4,7 +4,7 @@
         <button class="button button-clear button-positive" ng-click="closeEvent()">Cancel</button>
     </ion-header-bar>
     <ion-content padding="true" scroll="false" class="has-header">
-        <form class="list" ng-submit="create(event)">
+        <form class="list" >
             <ion-list>
                 <label class="item item-input">
                     <span class="input-label">Title</span>
@@ -19,7 +19,7 @@
                     <input type="datetime-local" ng-model="event.datetime" placeholder="">
                 </label>
             </ion-list>
-            <button type="submit" class="button button-stable button-block">Create</button>
+            <button class="button button-stable button-block" ng-click="create(event)">Create</button>
         </form>
     </ion-content>
 </div>

@@ -3,24 +3,24 @@
     <div class="list">
         <label class="item item-input item-floating-label">
             <span class="input-label">User Name</span>
-            <input type="text" placeholder="User Name">
+            <input type="text" ng-model="user.name"placeholder="User Name">
         </label>
         <label class="item item-input item-floating-label">
             <span class="input-label">Email</span>
-            <input type="email" placeholder="Email">
+            <input type="email" ng-model="user.email" placeholder="Email">
         </label>
         <label class="item item-input item-floating-label">
             <span class="input-label">Password</span>
-            <input type="password" placeholder="Password">
+            <input type="password" ng-model="user.password"placeholder="Password">
         </label>
         <label class="item item-input item-floating-label">
             <span class="input-label">Confirm Password</span>
-            <input type="password" placeholder="Confirm Password">
+            <input type="password" ng-model="user.confirmpassword"placeholder="Confirm Password">
         </label>
     </div>
     <div class="padding">
         <p> {{msg1}}</p>
-        <button class="button button-block button-positive activated" ng-click="home()">Register</button>
+        <button class="button button-block button-positive activated" ng-click="home(user)">Register</button>
     </div>
 </ion-content>
 
