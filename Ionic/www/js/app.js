@@ -28,21 +28,49 @@ var myapp = angular.module('PlanB', ['ionic', 'PlanB.factory', 'services'])
                 templateUrl: 'views/register.html',
                 controller: 'RegisterCtrl'
             })
-            .state('home', {
+            .state('app', {
+                url: '/app',
+                abstract: true,
+                templateUrl: 'views/menu.html',
+                controller: 'AppCtrl'
+            })
+            .state('app.home', {
                 url: '/home',
-                templateUrl: 'views/home.html',
-                controller: 'HomeCtrl'
+                views: {
+                    'menuContent': {
+                        templateUrl: 'views/home.html',
+                        controller: 'HomeCtrl'
+                    }
+                }
+            })
+            .state('app.profile', {
+                url: '/profile',
+                views: {
+                    'menuContent': {
+                        templateUrl: 'views/profile.html',
+                        controller: 'ProfileCtrl'
+                    }
+                }
+            })
+            .state('app.settings', {
+                url: '/settings',
+                views: {
+                    'menuContent': {
+                        templateUrl: 'views/settings.html',
+                        controller: 'SettingsCtrl'
+                    }
+                }
             })
             .state('details', {
                 url: '/details/:eventId',
                 templateUrl: 'views/details.html',
                 controller: 'DetailCtrl'
             })
-        .state('yelp', {
-            url: '/yelp',
-            templateUrl: 'views/yelp.html',
-            //controller: 'DetailCtrl'
-        });
+            .state('yelp', {
+                url: '/yelp',
+                templateUrl: 'views/yelp.html',
+                //controller: 'DetailCtrl'
+            });
         $urlRouterProvider.otherwise('/login');
 
     });

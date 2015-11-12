@@ -6,7 +6,7 @@
     <ul class="list">
         <li class="item">
             <i class="icon ion-calendar"></i>
-            <label>{{event.datetime}}</label>
+            <label>{{event.datetime | date : 'medium'}}</label>
         </li>
         <li class="item">
             <i class="icon ion-map"></i>

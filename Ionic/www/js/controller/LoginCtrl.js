@@ -15,7 +15,7 @@ myapp.controller('LoginCtrl', function ($scope, $state, $http, $httpParamSeriali
         $http(request).then(function (response) {
             console.log(response);
             if (response.data.status == 'success') {
-                $state.go("home")
+                $state.go("app.home")
             }
             else {
                 $state.go("login")
@@ -63,7 +63,7 @@ myapp.controller('LoginCtrl', function ($scope, $state, $http, $httpParamSeriali
 
 
                 $ionicLoading.hide();
-                $state.go('home');
+                $state.go('app.home');
             },
             function (msg) {
                 $ionicLoading.hide();
