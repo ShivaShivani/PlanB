@@ -45,7 +45,13 @@ public class EventService {
 		JSON json = new JSON();
 		String serialize = json.serialize(docs);
 
-		return Response.ok(serialize).build();
+		return Response.ok(serialize)
+				.header("Access-Control-Allow-Origin", "*")
+				.header("Access-Control-Allow-Headers", "origin, content-type, accept, authorization")
+				.header("Access-Control-Allow-Credentials", "true")
+				.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, HEAD")
+				.header("Access-Control-Max-Age", "1209600")
+				.build();
 	}
 
 	@GET
@@ -62,7 +68,13 @@ public class EventService {
 		String response = json.serialize(docs);
 		System.out.println(docs.toString());
 		
-		return Response.ok(response).build();
+		return Response.ok(response)
+				.header("Access-Control-Allow-Origin", "*")
+				.header("Access-Control-Allow-Headers", "origin, content-type, accept, authorization")
+				.header("Access-Control-Allow-Credentials", "true")
+				.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, HEAD")
+				.header("Access-Control-Max-Age", "1209600")
+				.build();
 	}
 	
 	@POST
@@ -81,6 +93,12 @@ public class EventService {
 		response.put("nRemoved", result.getN());
 		System.out.println(response);
 		
-		return Response.ok(response).build();
+		return Response.ok(response)
+				.header("Access-Control-Allow-Origin", "*")
+				.header("Access-Control-Allow-Headers", "origin, content-type, accept, authorization")
+				.header("Access-Control-Allow-Credentials", "true")
+				.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, HEAD")
+				.header("Access-Control-Max-Age", "1209600")
+				.build();
 	}
 }
