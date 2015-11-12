@@ -1,32 +1,62 @@
-<ion-header-bar class="bar-energized">
-    <div class="buttons">
-        <button class="button button-icon icon ion-ios-minus-outline"
-                ng-click="data.showDelete = !data.showDelete;"></button>
-    </div>
-    <h1 class="title">Lets Plan, {{user.email}}!</h1>
-    <h1 class="title">Lets Plan, {{user.name}}!</h1>
-    <h1 class="title">Lets Plan, {{user.givenName}}!</h1>
+<ion-side-menus enable-menu-with-back-views="false">
+    <ion-side-menu-content>
+        <ion-header-bar class="bar-energized">
 
-    <div class="buttons">
-        <button class="button button-icon icon ion-navicon-round" ng-click="data.showDelete = false">
-        </button>
-    </div>
-</ion-header-bar>
-<ion-content>
-    <ion-list class="container posts-page" show-delete="data.showDelete">
-        <ion-item ng-repeat="event in events" class="item-remove-animate; post row" href="#/details/{{event.id}}">
-            <h2>{{event.title}}</h2>
-            <p>{{event.location}}</p>
-            <p>{{event.datetime | date }}</p>
-            <ion-delete-button class="ion-minus-circled" ng-click="onItemDelete(item)">
-            </ion-delete-button>
-        </ion-item>
-    </ion-list>
-</ion-content>
-<ion-footer-bar>>
-    <div class="bar bar-footer">
-        <div>
-        <button class="button button-icon icon ion-plus-circled pull-right" ng-click="search()">Plan Event</button></div>
-        <button class="button button-icon icon ion-plus-circled pull-right" ng-click="plan()">PLAN</button>
-    </div>
-</ion-footer-bar>
+
+        </ion-header-bar>
+
+        <ion-nav-bar class="bar-energized">
+            <ion-nav-back-button>
+            </ion-nav-back-button>
+            <ion-nav-buttons side="right">
+                <button class="button button-icon button-clear ion-navicon" menu-toggle="right">
+                </button>
+            </ion-nav-buttons>
+        </ion-nav-bar>
+        <ion-nav-view name="menuContent"></ion-nav-view>
+
+
+        <ion-content>
+            <ion-list class="container posts-page" show-delete="data.showDelete">
+                <ion-item ng-repeat="event in events" class="item-remove-animate; post row"
+                          href="#/details/{{event.id}}">
+                    <h2>{{event.title}}</h2>
+
+                    <p>{{event.location}}</p>
+
+                    <p>{{event.datetime | date }}</p>
+                    <ion-delete-button class="ion-minus-circled" ng-click="onItemDelete(item)">
+                    </ion-delete-button>
+                </ion-item>
+            </ion-list>
+        </ion-content>
+        <ion-footer-bar>>
+            <div class="bar bar-footer">
+                <div>
+                    <button class="button button-icon icon ion-plus-circled pull-right" ng-click="search()">Plan Event
+                    </button>
+                </div>
+                <button class="button button-icon icon ion-plus-circled pull-right" ng-click="plan()">PLAN</button>
+            </div>
+        </ion-footer-bar>
+    </ion-side-menu-content>
+
+    <ion-side-menu side="right">
+        <ion-header-bar class="bar-stable">
+            <h1 class="title">PlanB</h1>
+        </ion-header-bar>
+        <ion-content>
+            <ion-list>
+                <ion-item menu-close href="#/home">
+                    Home
+                </ion-item>
+                <ion-item menu-close href="#/Settings">
+                    Settings
+                </ion-item>
+                <ion-item menu-close ng-click="logout()">
+                    Logout
+                </ion-item>
+            </ion-list>
+        </ion-content>
+    </ion-side-menu>
+</ion-side-menus>

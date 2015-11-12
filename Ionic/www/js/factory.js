@@ -6,6 +6,10 @@ angular.module('PlanB.factory', [])
         var events = [];
 
         return {
+            copy: function(allEvents) {
+
+                events = allEvents;
+            },
             create: function (event) {
                 events.push(event);
             },
