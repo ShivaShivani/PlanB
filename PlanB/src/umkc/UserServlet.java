@@ -44,7 +44,7 @@ public class UserServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 
 		MongoDAO mongoDAO = new MongoDAO();
-		DBCollection dbcollection = mongoDAO.createConnection();
+		DBCollection dbcollection = mongoDAO.getCollection("users");
 
 		System.out.println("hello");
 

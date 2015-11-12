@@ -8,16 +8,21 @@ import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
 
 public class MongoDAO {
-	
-	public DBCollection createConnection(){
-		
+
+	private DB db;
+
+	public DB createConnection() {
+
 		MongoClientURI uri = new MongoClientURI("mongodb://root:password@ds051863.mongolab.com:51863/group12");
 		MongoClient client = new MongoClient(uri);
 
-		DB db = client.getDB(uri.getDatabase());
-		DBCollection users = db.getCollection("users");
-		
-		return users;
+		db = client.getDB(uri.getDatabase());
+		return db;
 	}
 
+	public DBCollection getCollection(String name) {
+		this.createConnection();
+		DBCollection collection = db.getCollection(name);
+		return collection;
+	}
 }
