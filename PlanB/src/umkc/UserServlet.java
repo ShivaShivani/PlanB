@@ -55,18 +55,24 @@ public class UserServlet extends HttpServlet {
 		System.out.println(request.getParameter("password"));
 		DBCursor docs = dbcollection.find(query);
 		JSONObject jsonObject = new JSONObject();
-		if (docs.hasNext()) {
-			BasicDBObject basicDBObject = (BasicDBObject) docs.next();
-			System.out.println("Entered inside block");
-			System.out.println(basicDBObject.get("name"));
-			System.out.println(basicDBObject.get("password"));
+		String returnResponse = "";
+		if (docs.count() > 0) {
+			if (docs.hasNext()) {
+				BasicDBObject basicDBObject = (BasicDBObject) docs.next();
+				System.out.println("Entered inside block");
+				System.out.println(basicDBObject.get("name"));
+				System.out.println(basicDBObject.get("password"));
+				basicDBObject.remove("password");
+				basicDBObject.remove("confirmpassword");
+				returnResponse = basicDBObject.toJson();
+			}
 
-			jsonObject.put("status", "success");
 		} else {
-			jsonObject.put("status", "failed");
+			jsonObject.put("status", 0);
+			returnResponse = jsonObject.toString();
 		}
 
-		response.getWriter().write(jsonObject.toString());
+		response.getWriter().write(returnResponse);
 		// response.getWriter().write(docs.toArray().toString());
 
 		response.setHeader("Access-Control-Allow-Origin", "*");
@@ -111,10 +117,7 @@ public class UserServlet extends HttpServlet {
 			System.out.println("enter");
 			params.put("status", "failed");
 			System.out.println("assam");
-
-		}
-
-		else {
+		} else {
 			params.put("status", "success");
 			System.out.println("entering");
 			WriteResult result = users.insert(user1);
@@ -124,7 +127,6 @@ public class UserServlet extends HttpServlet {
 		response.setHeader("Access-Control-Allow-Methods", "POST");
 		response.setHeader("Access-Control-Allow-Headers", "Content-Type");
 		response.setHeader("Access-Control-Max-Age", "86400");
-
 	}
 
 	@Override
@@ -138,5 +140,4 @@ public class UserServlet extends HttpServlet {
 		response.setHeader("Access-Control-Allow-Headers", "Content-Type");
 		response.setHeader("Access-Control-Max-Age", "86400");
 	}
-
 }
