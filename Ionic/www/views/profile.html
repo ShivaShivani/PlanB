@@ -1,12 +1,14 @@
 <ion-view title="Profile">
     <ion-content padding="true" class="has-header">
-        <img src="https://xsoup-staging.s3.amazonaws.com/sites/5588a8b27d76a71a80000791/theme/images/dealers/person-icon.png" width="100%" height="auto" style=" width: 100%; height: auto; padding-right: 20%; padding-left: 20%">
+        <img src="https://xsoup-staging.s3.amazonaws.com/sites/5588a8b27d76a71a80000791/theme/images/dealers/person-icon.png"
+             width="100%" height="auto" style=" width: 100%; height: auto; padding-right: 20%; padding-left: 20%">
+
         <form class="list">
             <ion-list></ion-list>
         </form>
         <ion-list>
-            <ion-item>Shivani Gaddala</ion-item>
-            <ion-item>Kansas City, MO</ion-item>
+            <ion-item>{{user.name}}</ion-item>
+            <ion-item>{{user.email}}</ion-item>
         </ion-list>
     </ion-content>
 </ion-view>

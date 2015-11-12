@@ -6,7 +6,7 @@ myapp.controller('LoginCtrl', function ($scope, $state, $http, $httpParamSeriali
 
     //This method will be executed when user press the" Login with userId and Password"
     $scope.login = function (username, Password) {
-        var urlst = BASE_URL+"/user?username=" + username + "&password=" + Password;
+        var urlst = BASE_URL + "/user?username=" + username + "&password=" + Password;
         console.log(urlst);
         var request = {
             method: "GET",
@@ -14,11 +14,15 @@ myapp.controller('LoginCtrl', function ($scope, $state, $http, $httpParamSeriali
         };
         $http(request).then(function (response) {
             console.log(response);
-            if (response.data.status == 'success') {
-                $state.go("app.home")
+
+            if (response.data.status === 0) {
+                $state.go("login")
             }
             else {
-                $state.go("login")
+                User.getInstance().setData(response.data);
+                console.log(User.getInstance());
+                console.log("Logged in");
+                $state.go("app.home")
             }
         })
     };
