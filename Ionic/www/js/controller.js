@@ -9,7 +9,7 @@ angular.module('PlanB.controller', ['ionic', 'ui.router'])
        //This method will be executed when user press the" Login with userId and Password"
         $scope.login = function (username, password) {
             $state.go('home')
-        }
+        };
 
         //This method is executed when the user press the "Login with Google" button
         $scope.googleSignIn = function() {
@@ -30,12 +30,12 @@ angular.module('PlanB.controller', ['ionic', 'ui.router'])
                             console.log(response)
                             // this callback will be called asynchronously
                             // when the response is available'
-                            alert("success");
+                            //alert("success");
                         }, function(response) {
                             console.log(response)
                             // called asynchronously if an error occurs
                             // or server returns response with an error status.
-                            alert("failed");
+                            //alert("failed");
                         });
                     //for the purpose of this example I will store user data on local storage
                     UserService.setUser({

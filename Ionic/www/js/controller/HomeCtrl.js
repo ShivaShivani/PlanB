@@ -22,7 +22,7 @@ myapp.controller('HomeCtrl', function ($scope, $state, $ionicModal, $http) {
   $scope.create = function (event) {
 
     console.log(event)
-    var url = "http://localhost:9080/mongobasic/event";
+    var url = BASE_URL+"/event";
     var result = $http.post(url,event)
     console.log(result)
 

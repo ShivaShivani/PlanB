@@ -17,7 +17,7 @@
         <ion-item ng-repeat="event in events" class="item-remove-animate; post row" href="#/details/{{event.id}}">
             <h2>{{event.title}}</h2>
             <p>{{event.location}}</p>
-            <p>{{event.datetime}}</p>
+            <p>{{event.datetime | date }}</p>
             <ion-delete-button class="ion-minus-circled" ng-click="onItemDelete(item)">
             </ion-delete-button>
         </ion-item>
