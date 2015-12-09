@@ -31,6 +31,34 @@
                         {
                             "xml": "<access origin=\"https://accounts.google.com/*\" />",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"FacebookConnectPlugin\"><param name=\"ios-package\" value=\"FacebookConnectPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<plugin name=\"FacebookConnectPlugin\" value=\"FacebookConnectPlugin\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<access origin=\"https://m.facebook.com\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<access origin=\"https://graph.facebook.com\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<access origin=\"https://api.facebook.com\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<access origin=\"https://*.fbcdn.net\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<access origin=\"https://*.akamaihd.net\" />",
+                            "count": 1
                         }
                     ]
                 }
@@ -76,7 +104,7 @@
                     "Security.framework": [
                         {
                             "xml": true,
-                            "count": 1
+                            "count": 2
                         }
                     ],
                     "StoreKit.framework": [
@@ -90,7 +118,27 @@
                             "xml": true,
                             "count": 1
                         }
-                    ]
+                    ],
+                    "libsqlite3.dylib": [
+                        {
+                            "xml": false,
+                            "count": 1
+                        }
+                    ],
+                    "Social.framework": [
+                        {
+                            "xml": true,
+                            "count": 1
+                        }
+                    ],
+                    "Accounts.framework": [
+                        {
+                            "xml": true,
+                            "count": 1
+                        }
+                    ],
+                    "EventKit.framework": [],
+                    "EventKitUI.framework": []
                 }
             },
             "*-Info.plist": {
@@ -99,11 +147,27 @@
                         {
                             "xml": "<array><dict><key>CFBundleTypeRole</key><string>Editor</string><key>CFBundleURLName</key><string>com.ionicframework.starter</string><key>CFBundleURLSchemes</key><array><string>com.ionicframework.starter</string></array></dict><dict><key>CFBundleTypeRole</key><string>Editor</string><key>CFBundleURLName</key><string>REVERSED_CLIENT_ID</string><key>CFBundleURLSchemes</key><array><string>983864328688-1itu0haghnjkt3pgk27d9t7ip639i8ng.apps.googleusercontent.com</string></array></dict></array>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<array><dict><key>CFBundleURLSchemes</key><array><string>fb505306046299695</string></array></dict></array>",
+                            "count": 1
                         }
                     ],
                     "LSApplicationQueriesSchemes": [
                         {
                             "xml": "<array><string>com.ionicframework.starter</string><string>983864328688-1itu0haghnjkt3pgk27d9t7ip639i8ng.apps.googleusercontent.com</string><string>com-google-gidconsent</string><string>com-google-gidconsent-google</string><string>com.google.gppconsent.2.4.0</string><string>com.google.gppconsent.2.4.1</string></array>",
+                            "count": 1
+                        }
+                    ],
+                    "FacebookAppID": [
+                        {
+                            "xml": "<string>505306046299695</string>",
+                            "count": 1
+                        }
+                    ],
+                    "FacebookDisplayName": [
+                        {
+                            "xml": "<string>mongoApp</string>",
                             "count": 1
                         }
                     ]
@@ -130,6 +194,11 @@
         "cordova-plugin-googleplus": {
             "REVERSED_CLIENT_ID": "983864328688-1itu0haghnjkt3pgk27d9t7ip639i8ng.apps.googleusercontent.com",
             "PACKAGE_NAME": "com.ionicframework.starter"
+        },
+        "phonegap-facebook-plugin": {
+            "APP_ID": "505306046299695",
+            "APP_NAME": "mongoApp",
+            "PACKAGE_NAME": "com.ionicframework.mongoapp100854"
         }
     },
     "dependent_plugins": {}

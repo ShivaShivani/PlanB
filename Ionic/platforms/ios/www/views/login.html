@@ -17,8 +17,20 @@
         <a href="#/register">I don't have an Account.</a>
     </div>
     <div class="padding">
-        <button class="button button-block button-positive" ng-click="facebookSignIn()">Click to Login with Facebook</button></br>
+        <button class="button button-block button-positive" ng-click="login()">Click to Login with Facebook</button></br>
         <button class="button button-block button-assertive" ng-click="googleSignIn()">Click to Login with Google</button>
     </div>
 </ion-content>
-
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/facebookConnectPlugin.js"></script>
+<script type="text/javascript">
+var login = function () {
+if (!window.cordova) {
+var appId = prompt("Enter FB Application ID", "");
+facebookConnectPlugin.browserInit(appId);
+}
+facebookConnectPlugin.login( ["email"],
+function (response) { alert(JSON.stringify(response)) },
+function (response) { alert(JSON.stringify(response)) });
+}
+</script>

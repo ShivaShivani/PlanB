@@ -1,0 +1,18 @@
+<ion-view title="Friends">
+    <ion-content>
+        <ion-list class="container posts-page">
+            <ion-item ng-repeat="friend in friends" href="#/friends/{{friend.id}}">
+                <h2>{{friend.name}}</h2>
+
+                <p>{{friend.emailId}}</p>
+
+            </ion-item>
+        </ion-list>
+    </ion-content>
+    <ion-footer-bar>
+        <div class="bar bar-footer">
+            <button class="button button-icon icon ion-plus-circled pull-right" ng-click="addFriend()">Add</button>
+        </div>
+    </ion-footer-bar>hu7
+
+</ion-view>

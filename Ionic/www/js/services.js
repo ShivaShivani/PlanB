@@ -25,4 +25,17 @@ angular.module('services', [])
             getUser: getUser,
             setUser: setUser
         };
+    })
+    .service('FriendsService', function ($http) {
+        return {
+            all: function (success, error) {
+                $http.get(BASE_URL + "/api/friends/all").then(function (data) {
+                    //console.log(data);
+                    success(data.data);
+                }, function (err) {
+                    console.log(err);
+                    error(err);
+                });
+            }
+        }
     });

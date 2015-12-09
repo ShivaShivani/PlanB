@@ -28,4 +28,31 @@ angular.module('PlanB.factory', [])
                 return null;
             }
         };
+    })
+    .factory('Friends', function () {
+        var friends = [];
+
+        return {
+            copy: function(allFriends) {
+
+                friends = allFriends;
+            },
+            create: function (friend) {
+                friends.push(friend);
+            },
+            all: function () {
+                return friends;
+            },
+            remove: function (friend) {
+                friends.splice(friends.indexOf(friend));
+            },
+            get: function (friendId) {
+                for (var i = 0; i < friends.length; i++) {
+                    if (friends[i].id == friendId) {
+                        return friends[i];
+                    }
+                }
+                return null;
+            }
+        };
     });

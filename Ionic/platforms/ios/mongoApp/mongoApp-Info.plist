@@ -273,6 +273,38 @@
           <string>983864328688-1itu0haghnjkt3pgk27d9t7ip639i8ng.apps.googleusercontent.com</string>
         </array>
       </dict>
+      <dict>
+        <key>CFBundleURLSchemes</key>
+        <array>
+          <string>fb505306046299695</string>
+        </array>
+      </dict>
+      <dict>
+        <key>CFBundleTypeRole</key>
+        <string>Editor</string>
+        <key>CFBundleURLName</key>
+        <string>com.ionicframework.starter</string>
+        <key>CFBundleURLSchemes</key>
+        <array>
+          <string>com.ionicframework.starter</string>
+        </array>
+      </dict>
+      <dict>
+        <key>CFBundleTypeRole</key>
+        <string>Editor</string>
+        <key>CFBundleURLName</key>
+        <string>REVERSED_CLIENT_ID</string>
+        <key>CFBundleURLSchemes</key>
+        <array>
+          <string>983864328688-1itu0haghnjkt3pgk27d9t7ip639i8ng.apps.googleusercontent.com</string>
+        </array>
+      </dict>
+      <dict>
+        <key>CFBundleURLSchemes</key>
+        <array>
+          <string>fb505306046299695</string>
+        </array>
+      </dict>
     </array>
     <key>LSApplicationQueriesSchemes</key>
     <array>
@@ -283,5 +315,9 @@
       <string>com.google.gppconsent.2.4.0</string>
       <string>com.google.gppconsent.2.4.1</string>
     </array>
+    <key>FacebookAppID</key>
+    <string>505306046299695</string>
+    <key>FacebookDisplayName</key>
+    <string>mongoApp</string>
   </dict>
 </plist>

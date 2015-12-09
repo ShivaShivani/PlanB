@@ -14,9 +14,13 @@
                     <span class="input-label">Location</span>
                     <input type="text" ng-model="event.location" placeholder="Enter Event Location">
                 </label>
+                <!--<label class="item item-input">-->
+                    <!--<span class="input-label">Event Time</span>-->
+                    <!--<input type="datetime-local" ng-model="event.datetime" placeholder="">-->
+                <!--</label>-->
                 <label class="item item-input">
-                    <span class="input-label">Event Time</span>
-                    <input type="datetime-local" ng-model="event.datetime" placeholder="">
+                    <span class="input-label">Date</span>
+                    <input type="date">
                 </label>
             </ion-list>
             <button class="button button-stable button-block" ng-click="create(event)">Create</button>

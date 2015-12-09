@@ -75,5 +75,4 @@ myapp.controller('LoginCtrl', function ($scope, $state, $http, $httpParamSeriali
             }
         );
     };
-
-})
+});

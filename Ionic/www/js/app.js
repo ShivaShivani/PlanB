@@ -61,6 +61,15 @@ var myapp = angular.module('PlanB', ['ionic', 'PlanB.factory', 'services'])
                     }
                 }
             })
+            .state('app.friends', {
+                url: '/friends',
+                views: {
+                    'menuContent': {
+                        templateUrl: 'views/friends.html',
+                        controller: 'FriendsCtrl'
+                    }
+                }
+            })
             .state('details', {
                 url: '/details/:eventId',
                 templateUrl: 'views/details.html',

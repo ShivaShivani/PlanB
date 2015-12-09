@@ -1,0 +1,25 @@
+<div class="modal">
+    <ion-header-bar class="bar-energized">
+        <h1 class="title">Add Friend</h1>
+        <button class="button button-clear button-positive" ng-click="closeFriend()">Cancel</button>
+    </ion-header-bar>
+    <ion-content padding="true" scroll="false" class="has-header">
+        <form class="list" >
+            <ion-list>
+                <label class="item item-input">
+                    <span class="input-label">Name</span>
+                    <input type="text" ng-model="friend.name" placeholder="Enter Friend Name">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">EmailId</span>
+                    <input type="email" ng-model="friend.emailId" placeholder="Enter EmailId">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Phone</span>
+                    <input type="number" ng-model="friend.phone" placeholder="Enter Contact Number">
+                </label>
+            </ion-list>
+            <button class="button button-stable button-block" ng-click="createFriend(friend)">Tap me to add! </button>
+        </form>
+    </ion-content>
+</div>
