@@ -1,0 +1,20 @@
+<div class="modal">
+    <ion-header-bar class="bar-energized">
+        <h1 class="title">New Plan</h1>
+        <button class="button button-clear button-positive" ng-click="closeModal()">Cancel</button>
+    </ion-header-bar>
+    <ion-content padding="true" class="has-header">
+        <label class="item item-input">
+            <input type="text" ng-model="keyword" placeholder="Search for your friends">
+        </label>
+        <div class="list">
+            <div class="item item-button-right" ng-repeat="friend in friends">
+                <h3>{{friend.name}}</h3>
+                <h5>{{friend.emailId}}</h5>
+                <button class="button button-positive" type="button" ng-click="invite(friend)">
+                    <i class="icon ion-android-add"></i>
+                </button>
+            </div>
+        </div>
+    </ion-content>
+</div>

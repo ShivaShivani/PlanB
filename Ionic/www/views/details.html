@@ -1,5 +1,6 @@
 <ion-header-bar class="bar-energized">
     <h1 class="title"></h1>
+    <button class="button icon ion-person-add" ng-click="presentInviteFriends()"></button>
 </ion-header-bar>
 <ion-content class="padding">
     <h2>{{event.title}}</h2>
@@ -13,4 +14,10 @@
             <label>{{event.location}}</label>
         </li>
     </ul>
+    <h3>Invitees</h3>
+    <div class="list">
+        <div class="item item-button-right" ng-repeat="friend in invitees">
+            <h4>{{friend.name}}</h4>
+        </div>
+    </div>
 </ion-content>
